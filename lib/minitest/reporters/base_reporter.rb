@@ -87,7 +87,7 @@ module Minitest
 
       def print_info(e, name=true)
         print "#{e.exception.class.to_s}: " if name
-        e.message.each_line { |line| print_with_info_padding(line) }
+        e.exception.message.each_line { |line| print_with_info_padding(line) }
 
         trace = filter_backtrace(e.backtrace)
         trace.each { |line| print_with_info_padding(line) }
